@@ -6,9 +6,9 @@
 <body>
     <style>
       form {
-        border = 10px solid black;
-        margin = 20px;
-        padding = 10px;
+        border: 10px solid black;
+        margin: 20px;
+        padding: 10px;
       }
     </style>
     <?php
@@ -29,7 +29,7 @@
 
      ?>
      <form action="wiki.php">
-       <textarea name="content" rows="8" cols="80"><?php echo $safe_content; ?></textarea> //Input content here!
-       <input type="submit" value="Save"> //SUbmit button here!
+       <textarea name="content" rows="8" cols="80"><?php echo $safe_content; ?></textarea>
+       <input type="submit" value="Save">
      </form>
 </body>
