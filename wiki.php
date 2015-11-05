@@ -5,11 +5,22 @@
 </head>
 <body>
     <style>
+
       form {
         border: 10px solid black;
         margin: 20px;
         padding: 10px;
       }
+
+      textarea{
+        width: 100%;
+        height: 90%; /* Change this if we add more input */
+      }
+
+      #save{
+        height: 10%; /* Change this if we add more input */
+      }
+
     </style>
     <?php
 
@@ -30,6 +41,6 @@
      ?>
      <form action="wiki.php">
        <textarea name="content" rows="8" cols="80"><?php echo $safe_content; ?></textarea>
-       <input type="submit" value="Save">
+       <input id="save" type="submit" value="Save">
      </form>
 </body>
