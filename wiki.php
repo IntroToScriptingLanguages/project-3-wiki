@@ -12,6 +12,10 @@
         padding: 10px;
       }
 
+      .hidden{
+        display: none;
+      }
+
       textarea{
         width: 100%;
         height: 90%; /* Change this if we add more input */
@@ -21,7 +25,18 @@
         height: 10%; /* Change this if we add more input */
       }
 
+      #content:hover {
+        background: #ff9;
+      }
+
     </style>
+    <script>
+      $('#content').click(function() { //What does this do?  There is no element with id "content"!
+        $('form').removeClass('hidden'); //Makes the form visible
+        $('#content').addClass('hidden'); //Makes whatever has id "content" invisible
+      }
+    );
+    </script>
     <?php
 
     if (file_exists('wiki.txt')) {
@@ -39,7 +54,7 @@
     $s_content = htmlentities($content); //Escape code in text file to negate possible attack vector
 
      ?>
-     <form action="wiki.php">
+     <form class="hidden" action="wiki.php">
        <textarea name="content" rows="8" cols="80"><?php echo $safe_content; ?></textarea>
        <input id="save" type="submit" value="Save">
      </form>
