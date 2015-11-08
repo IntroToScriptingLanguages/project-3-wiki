@@ -22,6 +22,7 @@
 
     </style>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <script>
       $('#content').click(function() { //What does this do?  There is no element with id "content"!
         $('form').removeClass('hidden'); //Makes the form visible
@@ -46,6 +47,8 @@
     </script>
 =======
 >>>>>>> parent of 1da8aa7... wiki hover selector
+=======
+>>>>>>> parent of 1da8aa7... wiki hover selector
     <?php
 
     if (file_exists('wiki.txt')) {
@@ -68,6 +71,9 @@
 =======
      ?>
      <form action="wiki.php">
+<<<<<<< HEAD
+>>>>>>> parent of 1da8aa7... wiki hover selector
+=======
 >>>>>>> parent of 1da8aa7... wiki hover selector
        <textarea name="content" rows="8" cols="80"><?php echo $safe_content; ?></textarea>
        <textarea name="content2" rows="8" cols="80"><?php echo $safe_content; ?></textarea>
