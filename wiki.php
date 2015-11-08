@@ -67,7 +67,7 @@
       })
     );
     </script>
-     <form id="data" class="hidden" action="wiki.php">
+     <form id="data" action="wiki.php">
        <textarea name="content" rows="8" cols="80"><?php echo $safe_content; ?></textarea>
        <textarea name="content2" rows="8" cols="80"><?php echo $safe_content; ?></textarea>
        <textarea name="content3" rows="8" cols="80"><?php echo $safe_content; ?></textarea>
