@@ -52,7 +52,8 @@
         $('#content').addClass('hidden'); //Makes whatever has id "content" invisible
       }
 
-      $('#data').submit(function() {
+      $('#data').submit(function(event) {
+        event.preventDefault();
          var data = $('data'); //The form data we're submitting
          $.ajax({
            url: 'wiki.php', //We're submitting it to wiki.php
