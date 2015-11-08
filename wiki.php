@@ -31,7 +31,7 @@
 
         event.preventDefault();
         alert("Hi");
-         var data = $('data'); //The form data we're submitting
+         var data = $('#data'); //The form data we're submitting
          $.ajax({
            url: 'wiki.php', //We're submitting it to wiki.php
            data: data, //The data we're sending it
