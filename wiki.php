@@ -11,10 +11,6 @@
         padding: 10px;
       }
 
-      .hidden{
-        display: none;
-      }
-
       textarea{
         width: 100%;
         height: 30%; /* Change this if we add more input */
@@ -24,11 +20,8 @@
         height: 10%; /* Change this if we add more input */
       }
 
-      #content:hover {
-        background: #ff9;
-      }
-
     </style>
+<<<<<<< HEAD
     <script>
       $('#content').click(function() { //What does this do?  There is no element with id "content"!
         $('form').removeClass('hidden'); //Makes the form visible
@@ -51,6 +44,8 @@
       })
     );
     </script>
+=======
+>>>>>>> parent of 1da8aa7... wiki hover selector
     <?php
 
     if (file_exists('wiki.txt')) {
@@ -67,8 +62,13 @@
 
     $s_content = htmlentities($content); //Escape code in text file to negate possible attack vector
 
+<<<<<<< HEAD
     ?>
      <form id="data" class="hidden" action="wiki.php">
+=======
+     ?>
+     <form action="wiki.php">
+>>>>>>> parent of 1da8aa7... wiki hover selector
        <textarea name="content" rows="8" cols="80"><?php echo $safe_content; ?></textarea>
        <textarea name="content2" rows="8" cols="80"><?php echo $safe_content; ?></textarea>
        <textarea name="content3" rows="8" cols="80"><?php echo $safe_content; ?></textarea>
