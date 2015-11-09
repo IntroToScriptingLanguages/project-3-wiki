@@ -21,17 +21,19 @@
       }
 
     </style>
-    <script src="wiki.js" />
-    <?php
-      require_once("wiki.php");
-    ?>
+    <div id="debug">Nada</div>
     <div id="content" class="hidden content"><?php echo $safe_content; ?></div>
     <div id="content2" class="hidden content"><?php echo $safe_content; ?></div>
     <div id="content3" class="hidden content"><?php echo $safe_content; ?></div>
-     <form id="data" action="wiki.php">
+     <form id="data" action="wiki.html">
        <textarea name="content" rows="8" cols="80"></textarea>
        <textarea name="content2" rows="8" cols="80"></textarea>
        <textarea name="content3" rows="8" cols="80"></textarea>
        <input id="save" type="submit" value="Save">
      </form>
+     <script src="jquery-1.11.3.min.js"></script>
+     <script src="wiki.js"></script>
+     <?php
+       require_once("wiki.php");
+     ?>
 </body>
