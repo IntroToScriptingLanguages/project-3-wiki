@@ -25,7 +25,7 @@
       $('#content').click(function() { //What does this do?  There is no element with id "content"!
         $('form').removeClass('hidden'); //Makes the form visible
         $('#content').addClass('hidden'); //Makes whatever has id "content" invisible
-      }
+      })
 
       $('#data').submit(function(event) {
 
@@ -63,9 +63,9 @@
 
     ?>
      <form id="data" class="hidden" action="wiki.php">
-       <textarea name="content" rows="8" cols="80"><?php echo $safe_content; ?></textarea>
-       <textarea name="content2" rows="8" cols="80"><?php echo $safe_content; ?></textarea>
-       <textarea name="content3" rows="8" cols="80"><?php echo $safe_content; ?></textarea>
+       <textarea name="content" rows="8" cols="80"><div id="content"><?php echo $safe_content; ?></div></textarea>
+       <textarea name="content2" rows="8" cols="80"><div id="content"><?php echo $safe_content; ?></div></textarea>
+       <textarea name="content3" rows="8" cols="80"><div id="content"><?php echo $safe_content; ?></div></textarea>
        <input id="save" type="submit" value="Save">
      </form>
 </body>
