@@ -22,9 +22,9 @@
 
     </style>
     <script>
-      $('#content').click(function() { //What does this do?  There is no element with id "content"!
+      $('.content').click(function() { //What does this do?  There is no element with id "content"!
         $('form').removeClass('hidden'); //Makes the form visible
-        $('#content').addClass('hidden'); //Makes whatever has id "content" invisible
+        $('.content').addClass('hidden'); //Makes whatever has id "content" invisible
       })
 
       $('#data').submit(function(event) {
@@ -62,10 +62,13 @@
       $safe_content = htmlentities($content); //Escape code in text file to negate possible attack vector
 
     ?>
-     <form id="data" class="hidden" action="wiki.php">
-       <textarea name="content" rows="8" cols="80"><div id="content"><?php echo $safe_content; ?></div></textarea>
-       <textarea name="content2" rows="8" cols="80"><div id="content"><?php echo $safe_content; ?></div></textarea>
-       <textarea name="content3" rows="8" cols="80"><div id="content"><?php echo $safe_content; ?></div></textarea>
+    <div id="content" class="hidden content"><?php echo $safe_content; ?></div>
+    <div id="content2" class="hidden content"><?php echo $safe_content; ?></div>
+    <div id="content3" class="hidden content"><?php echo $safe_content; ?></div>
+     <form id="data" action="wiki.php">
+       <textarea name="content" rows="8" cols="80"></textarea>
+       <textarea name="content2" rows="8" cols="80"></textarea>
+       <textarea name="content3" rows="8" cols="80"></textarea>
        <input id="save" type="submit" value="Save">
      </form>
 </body>
