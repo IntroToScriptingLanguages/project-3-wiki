@@ -21,7 +21,7 @@ $(function() { //Wrap in ready function because apparently
        dataType: 'json', //Sending it as a JSON
        type: 'POST', //via POST
        async: true, //Not asynchronous...
-       success: function(data){
+       success: function(data){ //Change data here
          $('#debug').html("Success!");
        },
        error: function(data){
