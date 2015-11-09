@@ -19,8 +19,8 @@ $(function() { //Wrap in ready function because apparently
        data: data, //The data we're sending it
        contentType: 'application/json; charset=UTF-8', //Make sure we're actually sending a JSON and not just a query-string...
        dataType: 'json', //Sending it as a JSON
-       type: 'GET', //via POST
-       async: false, //Not asynchronous...
+       type: 'POST', //via POST
+       async: true, //Not asynchronous...
        success: function(data){
          $('#debug').html("Success!");
        },
