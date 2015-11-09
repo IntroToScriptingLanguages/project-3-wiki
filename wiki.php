@@ -59,7 +59,7 @@
         $content = '(no content)'; //No content by default if wiki.txt is missing
       }
 
-      $s_content = htmlentities($content); //Escape code in text file to negate possible attack vector
+      $safe_content = htmlentities($content); //Escape code in text file to negate possible attack vector
 
     ?>
      <form id="data" class="hidden" action="wiki.php">
