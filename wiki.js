@@ -13,7 +13,7 @@ $(function() { //Wrap in ready function because apparently
   $('#data').submit(function(event) {
     event.preventDefault();
     $('#debug').html("Submitting!");
-     var data = $('form').serialize(); //The form data we're submitting
+     var data = $('#data').serialize(); //The form data we're submitting
      $.ajax({
        url: 'wiki.php', //We're submitting it to wiki.php
        data: data, //The data we're sending it
