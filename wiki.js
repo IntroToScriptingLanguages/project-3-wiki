@@ -13,7 +13,7 @@ $(function() { //Wrap in ready function because apparently
   $('#data').submit(function(event) {
     event.preventDefault();
     $('#debug').html("Submitting!");
-     var data = $('#data'); //The form data we're submitting
+     var data = $('form').serialize(); //The form data we're submitting
      $.ajax({
        url: 'wiki.php', //We're submitting it to wiki.php
        data: data, //The data we're sending it
@@ -25,7 +25,10 @@ $(function() { //Wrap in ready function because apparently
          $('#debug').html("Success!");
        },
        error: function(data){
-         $('#debug').html("Error");
+         $('#debug').html("Error ".concat(data.serialize()));
+       },
+       complete: function(xhr, text){
+          $('#debug').html("Finished with code ".concat(xhr.status).concat(", ").concat(text));
        }
      });
   });
