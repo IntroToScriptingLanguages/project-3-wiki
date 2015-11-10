@@ -17,7 +17,6 @@ $(function() { //Wrap in ready function because apparently
      $.ajax({
        url: 'wiki.php', //We're submitting it to wiki.php
        data: data, //The data we're sending it
-       contentType: 'application/json; charset=UTF-8', //Make sure we're actually sending a JSON and not just a query-string...
        dataType: 'json', //Sending it as a JSON
        type: 'POST', //via POST
        async: true, //Not asynchronous...
