@@ -1,12 +1,12 @@
-document.getElementById('debug').innerHTML = "Hello! JQUERY Isn't working!";
-$('#debug').html("Hello!");
-
 function getParameter(param, queryString) //Gets parameter from uery string
 {
    var string = queryString;
+   console.log("queryString: ".concat(queryString));
    var stringArray = queryString.split('&');
    $.each(stringArray, function(i, v) {
      var paramArray = v.split('=');
+
+     console.log(v);
      if (paramArray[0] == param)
         return paramArray[1];
    })
@@ -14,7 +14,6 @@ function getParameter(param, queryString) //Gets parameter from uery string
 }
 
 $(function() { //Wrap in ready function because apparently
-  $('#debug').html("Wazzup!");
   $('#data').submit(function(event) {
     event.preventDefault();
     $('#debug').html("Submitting!");
