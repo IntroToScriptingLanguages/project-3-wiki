@@ -1,10 +1,3 @@
-$('.content').click(function() { //What does this do?  There is no element with id "content"!
-  $('form').removeClass('hidden'); //Makes the form visible
-  $('.content').addClass('hidden'); //Makes whatever has id "content" invisible
-});
-
-
-
 document.getElementById('debug').innerHTML = "Hello! JQUERY Isn't working!";
 $('#debug').html("Hello!");
 
@@ -33,6 +26,8 @@ $(function() { //Wrap in ready function because apparently
        async: true, //Not asynchronous...
        success: function(data, stat){ //Add code that changes content1-3 here
          $('#debug').html("Success! ".concat(stat));
+         $('form').removeClass('hidden'); //Makes the form visible
+         $('.content').addClass('hidden'); //Makes whatever has id "content" invisible
          $('#content').html(getParameter('content', data));
          $('#content2').html(getParameter('content2', data));
          $('#content3').html(getParameter('content3', data));
