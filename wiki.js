@@ -23,17 +23,16 @@ $(function() { //Wrap in ready function because apparently
        data: form_data, //The data we're sending it
        type: 'POST', //via POST
        async: true, //Not asynchronous...
-       success: function(data, stat){ //Add code that changes content1-3 here
+       success: function(d, stat){ //Add code that changes content1-3 here
          $('#debug').html("Success! ".concat(stat));
          $('form').addClass('hidden'); //Makes the form visible
-         $('#content').html(getParameter('content', data));
-         $('#content2').html(getParameter('content2', data));
-         $('#content3').html(getParameter('content3', data));
+         $('#content').html(getParameter('content', d));
+         $('#content2').html(getParameter('content2', d));
+         $('#content3').html(getParameter('content3', d));
        },
        error: function(data, stat){
          $('#debug').html("Error ".concat(form_data));
          $('form').addClass('hidden'); //Makes the form visible
-         $('.content').removeClass('hidden'); //Makes whatever has id "content" invisible
        }
     });
   });
