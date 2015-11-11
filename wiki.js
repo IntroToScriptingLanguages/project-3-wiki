@@ -34,6 +34,8 @@ $(function() { //Wrap in ready function because apparently
        },
        error: function(data, stat){
          $('#debug').html("Error ".concat(form_data));
+         $('form').addClass('hidden'); //Makes the form visible
+         $('.content').removeClass('hidden'); //Makes whatever has id "content" invisible
        }
     });
   });
