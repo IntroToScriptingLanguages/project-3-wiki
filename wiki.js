@@ -26,7 +26,6 @@ $(function() { //Wrap in ready function because apparently
        success: function(data, stat){ //Add code that changes content1-3 here
          $('#debug').html("Success! ".concat(stat));
          $('form').addClass('hidden'); //Makes the form visible
-         $('.content').removeClass('hidden'); //Makes whatever has id "content" invisible
          $('#content').html(getParameter('content', data));
          $('#content2').html(getParameter('content2', data));
          $('#content3').html(getParameter('content3', data));
