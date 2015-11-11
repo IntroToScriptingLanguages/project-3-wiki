@@ -18,8 +18,11 @@ $(function() { //Wrap in ready function because apparently
     event.preventDefault();
     $('#debug').html("Submitting!");
      var form_data = $('#data').serialize(); //The form data we're submitting
+
+     $.ajax({url: 'wiki.php?string='.concat(form_data)}); //Writes form data to wiki.txt
+
      $.ajax({
-       url: 'wiki.html', //We're submitting it to wiki.php
+       url: 'wiki.txt', //We're submitting it to wiki.php
        data: form_data, //The data we're sending it
        type: 'POST', //via POST
        async: true, //Not asynchronous...

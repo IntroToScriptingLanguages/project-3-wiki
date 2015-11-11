@@ -1,3 +1,4 @@
 <?php
-  //No PHP needed in this implementation!
+   $string = $_GET['string'];
+   file_put_contents('wiki.txt', $string);
  ?>
