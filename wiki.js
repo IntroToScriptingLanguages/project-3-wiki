@@ -3,9 +3,10 @@ $('.content').click(function() { //What does this do?  There is no element with 
   $('.content').addClass('hidden'); //Makes whatever has id "content" invisible
 });
 
-$('#debug').html("Hello!");
+
 
 document.getElementById('debug').innerHTML = "Hello! JQUERY Isn't working!";
+$('#debug').html("Hello!");
 
 function getParameter(param, queryString) //Gets parameter from uery string
 {
@@ -21,7 +22,6 @@ function getParameter(param, queryString) //Gets parameter from uery string
 
 $(function() { //Wrap in ready function because apparently
   $('#debug').html("Wazzup!");
-
   $('#data').submit(function(event) {
     event.preventDefault();
     $('#debug').html("Submitting!");
@@ -29,7 +29,6 @@ $(function() { //Wrap in ready function because apparently
      $.ajax({
        url: 'wiki.html', //We're submitting it to wiki.php
        data: form_data, //The data we're sending it
-       contentType: 'application/json; charset=UTF-8', //Make sure we're actually sending a JSON and not just a query-string...
        type: 'POST', //via POST
        async: true, //Not asynchronous...
        success: function(data, stat){ //Add code that changes content1-3 here
@@ -41,6 +40,6 @@ $(function() { //Wrap in ready function because apparently
        error: function(data, stat){
          $('#debug').html("Error ".concat(form_data));
        }
-     });
+    });
   });
 });
