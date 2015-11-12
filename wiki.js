@@ -9,7 +9,7 @@ function getParameter(param, queryString) //Gets parameter from uery string
      console.log(v);
      if (paramArray[0] == param)
         return paramArray[1];
-   })
+   });
    return null;
 }
 
@@ -19,11 +19,11 @@ $(function() { //Wrap in ready function because apparently
     $('#debug').html("Submitting!");
      var form_data = $('#data').serialize(); //The form data we're submitting
 
-     $.ajax({url: 'wiki.php?string='.concat(form_data)
+     $.ajax({url: 'wiki.php?string='.concat(form_data),
         success: function(){
-          console.log("formdata: ".concat(form_data))
+          console.log("formdata: ".concat(form_data));
           $.get('wiki.txt', function(new_data){
-            console.log("newdata: ".concat(new_data))
+            console.log("newdata: ".concat(new_data));
             $.ajax({
               url: 'wiki.html', //We're submitting it to wiki.php
               data: new_data, //The data we're sending it
@@ -39,9 +39,9 @@ $(function() { //Wrap in ready function because apparently
               error: function(data, stat){
                 $('#debug').html("Error ".concat(form_data));
                 $('form').addClass('hidden'); //Makes the form visible
-              }
+     					}
            });
-          })
+          });
         }
       }); //Writes form data to wiki.txt
 
