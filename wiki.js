@@ -24,7 +24,7 @@ $(function() { //Wrap in ready function because apparently
             $.ajax({
               url: 'wiki.html', //We're submitting it to wiki.php
               data: form_data, //The data we're sending it
-              type: 'GET', //via POST
+              type: 'GET', //via GET
               async: true, //Not asynchronous...
               success: function(d, stat){ //Add code that changes content1-3 here
                 $('#debug').html("Success! ".concat(stat));
