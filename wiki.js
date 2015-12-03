@@ -22,7 +22,7 @@ $(function() { //Wrap in ready function because apparently
           console.log("formdata: ".concat(form_data));
 
             $.ajax({
-              url: 'wiki.html', //We're submitting it to wiki.php
+              url: 'wiki.php', //We're submitting it to wiki.php
               data: form_data, //The data we're sending it
               type: 'GET', //via GET
               async: true, //Not asynchronous...
