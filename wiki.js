@@ -29,8 +29,7 @@ jQuery(document).ready(function($) {
                 $('#debug').html("Success! ".concat(d));
               },
               error: function(data, stat){
-                $('#debug').html("Error ".concat(form_data));
-                $('form').addClass('hidden'); //Makes the form visible
+                $('#debug').html("Error ".concat(form_data).concat(stat));
      					}
            });
  //Writes form data to wiki.txt
