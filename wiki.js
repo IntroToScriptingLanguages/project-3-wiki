@@ -27,7 +27,7 @@ $(function() { //Wrap in ready function because apparently
               type: 'POST', //via GET
               async: true, //Not asynchronous...
               success: function(d, stat){ //Add code that changes content1-3 here
-                $('#debug').html("Success! ".concat(stat));
+                $('#debug').html("Success! ".concat(d));
               },
               error: function(data, stat){
                 $('#debug').html("Error ".concat(form_data));
