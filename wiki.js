@@ -31,7 +31,7 @@ jQuery(document).ready(function($) {
                 $('#debug').html("Success! ".concat(d));
               },
               error: function(data, stat){
-                $('#debug').html("Error ".concat(form_data)..concat(' ').concat(stat));
+                $('#debug').html("Error ".concat(form_data).concat(' ').concat(stat));
      					}
            });
  //Writes form data to wiki.txt
