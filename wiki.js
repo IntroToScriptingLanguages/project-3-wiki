@@ -24,6 +24,7 @@ jQuery(document).ready(function($) {
           console.log("formdata: ".concat(form_data));
 
             $.ajax({
+              url: "wiki.php",
               data: form_data, //The data we're sending it
               type: 'POST', //via GET
               success: function(d, stat){ //Add code that changes content1-3 here
