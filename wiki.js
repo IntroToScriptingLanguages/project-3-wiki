@@ -24,14 +24,10 @@ $(function() { //Wrap in ready function because apparently
             $.ajax({
               url: 'wiki.php', //We're submitting it to wiki.php
               data: form_data, //The data we're sending it
-              type: 'GET', //via GET
+              type: 'POST', //via GET
               async: true, //Not asynchronous...
               success: function(d, stat){ //Add code that changes content1-3 here
                 $('#debug').html("Success! ".concat(stat));
-                $('form').addClass('hidden'); //Makes the form visible
-                $('#content').html(getParameter('content', d));
-                $('#content2').html(getParameter('content2', d));
-                $('#content3').html(getParameter('content3', d));
               },
               error: function(data, stat){
                 $('#debug').html("Error ".concat(form_data));
