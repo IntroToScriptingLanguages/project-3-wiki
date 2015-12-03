@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
       var stringArray = queryString.split('&');
       $.each(stringArray, function(i, v) {
         var paramArray = v.split('=');
-   
+
         console.log(v);
         if (paramArray[0] == param)
            return paramArray[1];
@@ -20,18 +20,16 @@ jQuery(document).ready(function($) {
     event.preventDefault();
     $('#debug').html("Submitting!");
      var form_data = $('#data').serialize(); //The form data we're submitting
-
-          console.log("formdata: ".concat(form_data));
-
             $.ajax({
-              url: "wiki.php",
+              url: "connect_db.php",
               data: form_data, //The data we're sending it
               type: 'POST', //via GET
-              success: function(d, stat){ //Add code that changes content1-3 here
+              success: function(d){ //Add code that changes content1-3 here
                 $('#debug').html("Success! ".concat(d));
               },
-              error: function(data, stat){
-                $('#debug').html("Error ".concat(form_data).concat(' ').concat(stat));
+              error: function(d, stat){
+                console.log(d);
+                $('#debug').html("Error ".concat(d).concat(' ').concat(stat));
      					}
            });
  //Writes form data to wiki.txt
