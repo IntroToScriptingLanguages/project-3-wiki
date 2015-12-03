@@ -1,4 +1,5 @@
 <?php
-   $string = $_GET['string'];
-   file_put_contents('wiki.txt', $string);
+   $string = $_POST['string'];
+   parse_url($string);
+   echo $name
  ?>
