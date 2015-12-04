@@ -4,9 +4,10 @@
   if (isset($_POST['name']))
   {
    $string = htmlspecialchars($_POST['name']);
-
+   $content = htmlspecialchars($_POST['content'])
    $json_array = json_encode(array(
-     'name' => $string
+     'name' => $string,
+     'content' => $content
    ));
 
    echo $json_array;
