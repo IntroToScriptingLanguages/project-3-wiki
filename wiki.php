@@ -7,7 +7,7 @@
    $content = htmlspecialchars($_POST['content'])
    $json_array = json_encode(array(
      'name' => $string,
-     'content' => $content
+     'content' => $content,
    ));
 
    echo $json_array;
