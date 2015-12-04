@@ -6,7 +6,7 @@
    $string = htmlspecialchars($_POST['name']);
 
    $json_array = json_encode(array(
-     name => $string
+     'name' => $string
    ));
 
    echo $json_array;
