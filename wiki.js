@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
     $('#debug').html("Submitting!");
      var form_data = $('#data').serialize(); //The form data we're submitting
             $.ajax({
-              url: "connect_db.php",
+              url: "wiki.php",
               data: form_data, //The data we're sending it
               type: 'POST', //via GET
               success: function(d){ //Add code that changes content1-3 here
