@@ -38,6 +38,6 @@
    else
    {
       echo json_encode(array(result => "Error: ".concat($mysql->error()), succeed => "false" );
-   };
+   }
   }
 ?>
