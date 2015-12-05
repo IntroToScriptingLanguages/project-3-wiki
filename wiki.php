@@ -37,7 +37,7 @@
    }
    else
    {
-      echo json_encode(array('result' => "Error: ".$mysql->error(), 'succeed' => "false" ) );
+      echo json_encode(array('result' => "Error: ".$mysql->$error, 'succeed' => "false" ) );
    }
   }
 ?>
