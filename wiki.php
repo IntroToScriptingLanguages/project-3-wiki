@@ -37,7 +37,7 @@
      $check_size_count = $check_size_result->num_rows;
 
      //If size is greater than "delete_database" delete all rows in chatty
-     if ($check_size_count > $delete_database)
+     if ($check_size_count > ($delete_database-1)) //Need to account by off-by-0
      {
        $delete_query = "
         DELETE FROM chatty
