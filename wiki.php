@@ -35,6 +35,8 @@
     (timestamp, name, content)
     VALUES ($timestamp, $name, $content)
    ";
+
+   print_r($sql_query);
    //Insert values into database
    if ($mysql->query($sql_query) > 0)
    {
