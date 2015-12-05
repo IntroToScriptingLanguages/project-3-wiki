@@ -42,7 +42,7 @@
    }
    else
    {
-      echo json_encode(array('result' => "Error: could not complete query storing data into database. ", 'succeed' => "false" ) );
+      echo json_encode(array('result' => "Error: could not complete query storing data into database. " . $mysql->error, 'succeed' => "false" ) );
    }
 
    $mysql->close();
