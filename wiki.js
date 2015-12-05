@@ -66,11 +66,11 @@ jQuery(document).ready(function($) {
                var chatbox = $.parseJSON(row); //'id' => the unique id, 'timestamp' => the timestamp string, 'name' => the user submiting it, 'content' => the content
                $('#chatty').append(
                   $('<li>').append(
-                    $('<div>').attr('class', 'name_box').html('<b>'+chatbox.name+'</b> <i>submitted at: '+chatbox.timestamp+'</i>');
+                    $('<div>').attr('class', 'name_box').html('<b>'+chatbox.name+'</b> <i>submitted at: '+chatbox.timestamp+'</i>')
                   ).append(
-                    $('<div>').attr('class', 'content_box').html(chatbox.content);
-                  );
-               );
+                    $('<div>').attr('class', 'content_box').html(chatbox.content)
+                  )
+               )
              }
            });
 
