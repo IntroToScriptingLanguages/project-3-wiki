@@ -10,8 +10,8 @@
   $mysqli = new mysqli($dsn, $username, $password, $database);
 
   //Checks to see if it worked!
-  if ($mysql->connect_errno > 0){
-    die('Cannot connect to database: ' . $mysql->connect_error);
+  if ($mysqli->connect_errno > 0){
+    die('Cannot connect to database: ' . $mysqli->connect_error);
   }
 
   //
@@ -21,7 +21,7 @@
   ";
 
    //Insert values into database
-   if ($output = $mysql->query($sql_query))
+   if ($output = $mysqli->query($sql_query))
    {
 
      $array = array('result' => "Input succeeded! ", 'succeed' => "true");
@@ -34,7 +34,7 @@
    }
    else
    {
-      echo json_encode(array('result' => "Error: could not complete query storing data into database. " . $mysql->error, 'succeed' => "false" ) );
+      echo json_encode(array('result' => "Error: could not complete query storing data into database. " . $mysqli->error, 'succeed' => "false" ) );
    }
 
  ?>
