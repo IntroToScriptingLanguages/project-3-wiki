@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 
-   function getParameter(param, queryString) //Gets parameter from uery string
+   function getParameter(param, queryString) //Function that gets parameter from query string
    {
       var string = queryString;
       console.log("queryString: ".concat(queryString));
@@ -15,7 +15,9 @@ jQuery(document).ready(function($) {
       return null;
    }
 
+  var submitted = false;
 
+  //Sends data via AJAX to database (wiki.php)
   $('#data').submit(function(event) {
     event.preventDefault();
     $('#debug').html("Submitting!");
@@ -26,13 +28,15 @@ jQuery(document).ready(function($) {
               type: 'POST', //via GET
               success: function(d){ //Add code that changes content1-3 here
                 $('#debug').html("Success! ".concat(d));
+                submitted = true;
               },
               error: function(d, stat){
                 console.log(d);
                 $('#debug').html("Error ".concat(d).concat(' ').concat(stat));
      					}
            });
- //Writes form data to wiki.txt
+
+   //Retrieves all data via AJAX from database and throws them into an unordered list.            
 
 
   });

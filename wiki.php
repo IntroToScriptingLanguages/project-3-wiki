@@ -1,15 +1,37 @@
 <?php
   header('Content-Type: application/json; charset=utf-8');
 
-  if (isset($_POST['name']))
+  if (isset($_POST['name']) && isset($_POST['content']))
   {
-   $string = htmlspecialchars($_POST['name']);
 
-   $json_array = json_encode(array(
-     name => $string
-   ));
+   //MySQL login data:
+   $dsn = '127.0.0.1';
+   $username = 'zmzhang';
+   $password = 'LDkyeY"323';
+   $database = 'zmzhang';
 
-   echo $json_array;
-   exit();
+   //Create SQL link
+   $mysql = new mysqli($dsn, $username, $password, $database);
+
+   //What we're throwing into the database:
+   $timestamp = date('g:i:s M j o');
+   $name = htmlspecialchars($_POST['name']);
+   $content = htmlspecialchars($_POST['content']);
+
+   //Our MySQL commands
+   $sql_query = "
+    INSERT INTO chatty
+    (timestamp, name, content)
+    VALUES ($timestamp, $name, $content)
+   ";
+   //Insert values into database
+   if ($mysql->query($sql_query) > 0)
+   {
+      echo "Input succeeded!";
+   }
+   else
+   {
+      echo "Error: ".concat($mysql->error());
+   }
   }
 ?>
