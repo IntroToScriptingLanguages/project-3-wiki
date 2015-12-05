@@ -3,7 +3,7 @@
 
   if (isset($_POST['name']) && isset($_POST['content']))
   {
-
+    $delete_database = 5;  //Delete all data in database after it hits 10 posts.
    //MySQL login data:
    $dsn = '127.0.0.1';
    $username = 'zmzhang';
@@ -24,6 +24,28 @@
    $timestamp = date('g:i:s M j o');
    $name = htmlspecialchars($_POST['name']);
    $content = htmlspecialchars($_POST['content']);
+
+   //Check to see if database should be cleansed first
+   $check_size_query = "
+    SELECT *
+    FROM chatty
+   ";
+
+   //Checks size of database and compares it to "delete_database"
+   if ($check_size_result = $mysql->query($check_size_query))
+   {
+     $check_size_count = $check_size_result->num_rows;
+
+     //If size is greater than "delete_database" delete all rows in chatty
+     if ($check_size_count > $delete_database)
+     {
+       $delete_query = "
+        DELETE FROM chatty
+        ";
+
+        $mysql->query($delete_query);
+      }
+   }
 
    //Our MySQL commands
    $sql_query = "
