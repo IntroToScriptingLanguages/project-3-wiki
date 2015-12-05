@@ -19,6 +19,11 @@
    //Create SQL link
    $mysql = new mysqli($dsn, $username, $password, $database);
 
+   //Checks to see if it worked!
+   if ($mysql->connect_errno > 0){
+     die('Cannot connect to database: ' . $mysql->connect_error);
+   }
+
    //What we're throwing into the database:
    $timestamp = date('g:i:s M j o');
    $name = htmlspecialchars($_POST['name']);
@@ -33,11 +38,13 @@
    //Insert values into database
    if ($mysql->query($sql_query) > 0)
    {
-      echo json_encode(array('result' => "Input succeeded!", 'succeed' => "true") );
+      echo json_encode(array('result' => "Input succeeded! ", 'succeed' => "true") );
    }
    else
    {
-      echo json_encode(array('result' => "Error: ".$mysql->$error, 'succeed' => "false" ) );
+      echo json_encode(array('result' => "Error: could not complete query storing data into database. ", 'succeed' => "false" ) );
    }
+
+   $mysql->close();
   }
 ?>
