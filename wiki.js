@@ -62,6 +62,7 @@ jQuery(document).ready(function($) {
              if (i in d)
              {
                var row = d.i;
+               console.log('working on'+i);
                //Create new divs for chat rooms here
                var chatbox = $.parseJSON(row); //'id' => the unique id, 'timestamp' => the timestamp string, 'name' => the user submiting it, 'content' => the content
                $('#chatty').append(
