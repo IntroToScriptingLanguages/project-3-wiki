@@ -56,6 +56,9 @@ jQuery(document).ready(function($) {
          {
            $('#debug').html("Success! "+result);
 
+           //Empty ordered list
+           $('#chatty').empty();
+
            //Retrieve data here
            var num_rows = (Object.keys(d).length) - 2; //The number of chatboxes (rows) returned! -2 to take into account keys "result" and "success"
            $.each(d, function(i, v){
