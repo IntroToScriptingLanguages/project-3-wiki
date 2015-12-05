@@ -33,11 +33,11 @@
    //Insert values into database
    if ($mysql->query($sql_query) > 0)
    {
-      echo "Input succeeded!";
+      echo json_encode(array(result => "Input succeeded!", succeed => "true");
    }
    else
    {
-      echo "Error: ".concat($mysql->error());
+      echo json_encode(array(result => "Error: ".concat($mysql->error()), succeed => "false" );
    };
   }
 ?>

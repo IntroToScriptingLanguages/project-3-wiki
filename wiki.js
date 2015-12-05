@@ -27,8 +27,16 @@ jQuery(document).ready(function($) {
               data: form_data, //The data we're sending it
               type: 'POST', //via GET
               success: function(d){ //Add code that changes content1-3 here
-                $('#debug').html("Success! ".concat(d));
-                submitted = true;
+                var result = d.result;
+                
+                if (d.succeed == "true")
+                {
+                  $('#debug').html("Success! ".concat(result));
+                  submitted = true;
+                }
+                else {
+                  $('#debug').html("Failed! ".concat(result));
+                }
               },
               error: function(d, stat){
                 console.log(d);
