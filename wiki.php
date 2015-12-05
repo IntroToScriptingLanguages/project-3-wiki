@@ -11,10 +11,6 @@
    $database = 'zmzhang';
    $string = htmlspecialchars($_POST['name']);
    $content = htmlspecialchars($_POST['content']);
-   $json_array = json_encode(array(
-     'name' => $string,
-     'content' => $content,
-   ));
 
    //Create SQL link
    $mysql = new mysqli($dsn, $username, $password, $database);
