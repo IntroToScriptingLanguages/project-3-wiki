@@ -3,7 +3,7 @@
 
   if (isset($_POST['name']) && isset($_POST['content']))
   {
-    $delete_database = 5;  //Delete all data in database after it hits 10 posts.
+    $delete_database = 50;  //Delete all data in database after it hits 10 posts.
    //MySQL login data:
    $dsn = '127.0.0.1';
    $username = 'zmzhang';
