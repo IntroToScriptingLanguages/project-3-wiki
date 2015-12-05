@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
      					}
            });
 
-   //Retrieves all data via AJAX from database and throws them into an unordered list.            
+   //Retrieves all data via AJAX from database and throws them into an unordered list.
 
 
   });
