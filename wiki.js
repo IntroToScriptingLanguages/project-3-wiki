@@ -58,11 +58,11 @@ jQuery(document).ready(function($) {
 
            //Retrieve data here
            var num_rows = (Object.keys(d).length) - 2; //The number of chatboxes (rows) returned! -2 to take into account keys "result" and "success"
-           $.each([1, num_rows], function(i){
-             if (i in d)
+           $.each(d, function(i, v){
+             if (i != 'result' && i != 'succeed')
              {
-               var row = d.i;
-               console.log('working on'+i);
+               var row = v;
+               console.log('working on '+i);
                //Create new divs for chat rooms here
                var chatbox = $.parseJSON(row); //'id' => the unique id, 'timestamp' => the timestamp string, 'name' => the user submiting it, 'content' => the content
                $('#chatty').append(
