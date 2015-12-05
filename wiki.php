@@ -43,8 +43,15 @@
         DELETE FROM chatty
         ";
 
-        $mysql->query($delete_query);
+        if ($mysql->query($delete_query) == 0)
+        {
+             echo json_encode(array('result' => "Error: could not successfully purge database. " . $mysql->error, 'succeed' => "false" ) );
+        }
       }
+   }
+   else
+   {
+      echo json_encode(array('result' => "Error: could not access database. " . $mysql->error, 'succeed' => "false" ) );
    }
 
    //Our MySQL commands
