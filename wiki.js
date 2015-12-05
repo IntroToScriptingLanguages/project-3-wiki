@@ -58,7 +58,7 @@ jQuery(document).ready(function($) {
 
            //Retrieve data here
            var num_rows = (Object.keys(d).length) - 2; //The number of chatboxes (rows) returned! -2 to take into account keys "result" and "success"
-           $.each([0, num_rows], function(i){
+           $.each([1, num_rows], function(i){
              if (i in d)
              {
                var row = d.i;
