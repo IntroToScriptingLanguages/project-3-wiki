@@ -31,6 +31,10 @@
     FROM chatty
    ";
 
+   //Escape strings
+   $name = $mysql->real_escape_string($name);
+   $content = $mysql->real_escape_string($content);
+
    //Checks size of database and compares it to "delete_database"
    if ($check_size_result = $mysql->query($check_size_query))
    {
