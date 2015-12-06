@@ -41,6 +41,7 @@ function sendData(form_data)
              if (d.succeed == "true")
              {
                $('#debug').html("Success! "+result);
+               retrieveData();
              }
              else {
                $('#debug').html("Failed! "+result);
