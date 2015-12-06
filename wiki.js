@@ -23,14 +23,14 @@ jQuery(document).ready(function($) {
   $('#data').submit(function(event) {
     event.preventDefault();
     $('#debug').html("Submitting!");
-    sendData();
+    var form_data = $('#data').serialize(); //The form data we're submitting
+    sendData(form_data);
   });
 });
 
 //Performs all AJAX calls
-function sendData()
+function sendData(form_data)
 {
-  var form_data = $('#data').serialize(); //The form data we're submitting
          $.ajax({
            url: "wiki.php",
            data: form_data, //The data we're sending it
@@ -58,7 +58,6 @@ function retrieveData()
 {
   $.ajax({
     url: "retrieve.php",
-    data: form_data, //The data we're sending it
     type: 'POST', //via GET
     success: function(d){ //Add code that changes content1-3 here
       var result = d.result;
