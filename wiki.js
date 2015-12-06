@@ -41,7 +41,6 @@ function sendData(form_data)
              if (d.succeed == "true")
              {
                $('#debug').html("Success! "+result);
-               retrieveData();
              }
              else {
                $('#debug').html("Failed! "+result);
@@ -53,6 +52,8 @@ function sendData(form_data)
            }
         });
 }
+
+setInterval(retrieveData(), 500)
 
 //Retrieves all data via AJAX from database and throws them into an unordered list.
 function retrieveData()
