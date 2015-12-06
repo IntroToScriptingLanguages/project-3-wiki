@@ -53,7 +53,7 @@ function sendData(form_data)
         });
 }
 
-  setInterval(function(){ retrieveData(); }, 500);
+  setInterval(function(){ retrieveData(); }, 1500);
 
 //Retrieves all data via AJAX from database and throws them into an unordered list.
 function retrieveData()
