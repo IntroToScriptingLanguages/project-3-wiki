@@ -2,7 +2,7 @@
 var num_active_bots = 0;
 
 var HelloBot = {
-   nombre: 'Hello Bot',
+   nombre: "Hello Bot",
    on: false, //Checks to see if bot is active in case of multiple users.
    spam: function(interval, times)
    {
@@ -12,7 +12,6 @@ var HelloBot = {
       num_active_bots++;
       this.on = true;
       var count = 0;
-      console.log("Ison: "+this.on);
       var repeat = setInterval(function(){
         console.log(this.nombre);
         sendData('name='+this.nombre+'&content='+"Hello World!  I'm a bot!");
@@ -25,6 +24,7 @@ var HelloBot = {
           //Disable bots
           console.log("HelloBot disabled");
           this.on = false;
+          console.log("Ison: "+this.on);
           num_active_bots--;
           clearInterval(repeat);
         }
