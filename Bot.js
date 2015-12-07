@@ -1,11 +1,11 @@
 //Bot and all its subclasses here
 
 var HelloBot = {
-   name: "Bot";
+   name: "Bot",
    changeName: function(new_name)
    {
       this.name = new_name;
-   }
+   },
    spam: function(interval, times)
    {
       var count = 0;

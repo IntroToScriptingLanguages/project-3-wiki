@@ -27,7 +27,7 @@ jQuery(document).ready(function($) {
     console.log(form_data);
     sendData(form_data);
   });
-});
 
 setInterval(function(){ retrieveData(); }, 1500);
-}
+
+});
