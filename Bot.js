@@ -25,12 +25,13 @@ var HelloBot = {
           count++;
         }
         else {
+          //Disable bots
+          console.log("HelloBot disabled");
+          this.on = false;
+          num_active_bots--;
           clearInterval(repeat);
         }
       }, interval)
-      console.log("HelloBot disabled");
-      this.on = false;
-      num_active_bots--;
     }
    }
 }
