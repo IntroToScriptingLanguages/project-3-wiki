@@ -1,16 +1,12 @@
 //Bot and all its subclasses here
 
-class Bot{
-  var name;
-
-  constructor(n) {name = n;} //Abstract interface
-
-  spam(interval, times) //Interval denotes interval size, times denotes number of intervals
-  {}
-}
-
-class HelloBot extends Bot{
-   spam(interval, times)
+var HelloBot = {
+   name: "Bot";
+   changeName: function(new_name)
+   {
+      this.name = new_name;
+   }
+   spam: function(interval, times)
    {
       var count = 0;
       var repeat = setInterval(function(){

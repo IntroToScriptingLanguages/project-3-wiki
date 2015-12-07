@@ -26,16 +26,17 @@ function sendData(form_data)
         //Add spambot
         if (Math.random() * 100 < 40) //40% chance of spambot after each post.
         {
-          var bot;
           var spambot_type = Math.random() * 100;
+
           if (spambot_type < 100) //100% a Hello Bot
           {
              var index = parseInt(1 + Math.random() * 9, 10);
              var inteval = parseInt(3000 + Math.random() * 2999, 10);
              var time = parseInt(3 + Math.random() * 5, 10);
-             bot = new HelloBot("HelloBot" + index);
-             bot.spam(interval, time);
+             HelloBot.changeName("HelloBot" + index);
+             HelloBot.spam(interval, time);
           }
+
         }
 }
 
