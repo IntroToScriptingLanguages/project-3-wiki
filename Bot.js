@@ -9,7 +9,7 @@ var HelloBot = {
    },
    spam: function(interval, times)
    {
-     if (!on)
+     if (!this.on)
      {
       this.on = true;
       var count = 0;
