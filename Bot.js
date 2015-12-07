@@ -26,7 +26,7 @@ function sendDataBot(form_data) //sendData with extra stuff cut out- I swear thi
 }
 
 var HelloBot = {
-   botName: "Hello Bot",
+  // botName: "Hello Bot",
   // on: false, //Checks to see if bot is active in case of multiple users.
    spam: function(interval, times)
    {
@@ -37,8 +37,8 @@ var HelloBot = {
     //  this.on = true;
       var count = 0;
       var repeat = setInterval(function(){
-        console.log(this.botName);
-        sendDataBot('name='+this.botName+'&content='+"Hello World!  I'm a bot!");
+        console.log("Hello Bot");
+        sendDataBot('name='+"Hello Bot"+'&content='+"Hello World!  I'm a bot!");
 
         if (count < times)
         {
