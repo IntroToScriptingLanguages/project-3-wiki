@@ -30,8 +30,11 @@ function sendData(form_data)
           var spambot_type = Math.random() * 100;
           if (spambot_type < 100) //100% a Hello Bot
           {
-             var index = 1 + Math.random() * 9;
-             bot = new HelloBot("HelloBot" + parseInt(index, 10));
+             var index = parseInt(1 + Math.random() * 9, 10);
+             var inteval = parseInt(3000 + Math.random() * 2999, 10);
+             var time = parseInt(3 + Math.random() * 5, 10);
+             bot = new HelloBot("HelloBot" + index);
+             bot.spam(interval, time);
           }
         }
 }

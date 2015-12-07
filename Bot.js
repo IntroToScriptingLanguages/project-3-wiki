@@ -5,12 +5,12 @@ class Bot{
 
   constructor(n) {name = n;} //Abstract interface
 
-  startSpam(interval, times) //Interval denotes interval size, times denotes number of intervals
+  spam(interval, times) //Interval denotes interval size, times denotes number of intervals
   {}
 }
 
 class HelloBot extends Bot{
-   startSpam(interval, times)
+   spam(interval, times)
    {
       var count = 0;
       var repeat = setInterval(function(){
