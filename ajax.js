@@ -1,5 +1,7 @@
 //Contains all data for sending and receiving data between JS and PHP files (and PHP files and the database)
 //Performs all AJAX calls
+var active_bot_limit = 5; //Max number of active spambots
+
 function sendData(form_data)
 {
          $.ajax({
@@ -24,7 +26,7 @@ function sendData(form_data)
         });
 
         //Add spambot
-        if (Math.random() * 100 < 40) //40% chance of spambot after each post.
+        if (num_active_bots < active_bot_limit && Math.random() * 100 < 100) //100% chance of spambot after each post.
         {
           var spambot_type = Math.random() * 100;
 
@@ -33,7 +35,8 @@ function sendData(form_data)
              var index = parseInt(1 + Math.random() * 9, 10);
              var interval = parseInt(3000 + Math.random() * 2999, 10);
              var time = parseInt(3 + Math.random() * 5, 10);
-             HelloBot.changeName("HelloBot" + index);
+             console.log(index+", "+interval+", "+time);
+             HelloBot.changeName("HelloBot" + index); //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
              HelloBot.spam(interval, time);
           }
 

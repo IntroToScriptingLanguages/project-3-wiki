@@ -1,4 +1,5 @@
 //Bot and all its subclasses here
+var num_active_bots = 0;
 
 var HelloBot = {
    name: "Bot",
@@ -9,9 +10,10 @@ var HelloBot = {
    },
    spam: function(interval, times)
    {
-     if (!this.on)
+     if (!(this.on))
      {
       console.log("HelloBot enabled");
+      num_active_bots++;
       this.on = true;
       var count = 0;
       var repeat = setInterval(function(){
@@ -28,6 +30,7 @@ var HelloBot = {
       }, interval)
       console.log("HelloBot disabled");
       this.on = false;
+      num_active_bots++;
     }
    }
 }
