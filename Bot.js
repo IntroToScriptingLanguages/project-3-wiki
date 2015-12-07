@@ -11,7 +11,7 @@ var HelloBot = {
    {
      if (!on)
      {
-      on = true;
+      this.on = true;
       var count = 0;
       var repeat = setInterval(function(){
 
@@ -25,7 +25,7 @@ var HelloBot = {
           clearInterval(repeat);
         }
       }, interval)
-      on = false;
+      this.on = false;
     }
    }
 }
