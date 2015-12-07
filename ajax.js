@@ -33,11 +33,9 @@ function sendData(form_data)
 
           if (spambot_type < 100) //100% a Hello Bot
           {
-             var index = parseInt(1 + Math.random() * 9, 10);
              var interval = parseInt(3000 + Math.random() * 2999, 10);
              var time = parseInt(3 + Math.random() * 5, 10);
-             console.log(index+", "+interval+", "+time);
-             HelloBot.changeName("HelloBot" + index); //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
+             console.log(index+", "+interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
              HelloBot.spam(interval, time);
           }
 

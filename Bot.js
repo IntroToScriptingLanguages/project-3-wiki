@@ -2,12 +2,8 @@
 var num_active_bots = 0;
 
 var HelloBot = {
-   name: "Bot",
+   name: "Hello Bot",
    on: false, //Checks to see if bot is active in case of multiple users.
-   changeName: function(new_name)
-   {
-      this.name = new_name;
-   },
    spam: function(interval, times)
    {
      if (!(this.on))
