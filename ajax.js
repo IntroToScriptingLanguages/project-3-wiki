@@ -35,7 +35,7 @@ function sendData(form_data)
           {
              var interval = parseInt(3000 + Math.random() * 2999, 10);
              var time = parseInt(3 + Math.random() * 5, 10);
-             console.log(index+", "+interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
+             console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
              HelloBot.spam(interval, time);
           }
 
