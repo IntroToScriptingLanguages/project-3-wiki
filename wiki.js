@@ -28,3 +28,6 @@ jQuery(document).ready(function($) {
     sendData(form_data);
   });
 });
+
+setInterval(function(){ retrieveData(); }, 1500);
+}

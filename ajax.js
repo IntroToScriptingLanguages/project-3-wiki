@@ -22,9 +22,21 @@ function sendData(form_data)
              $('#debug').html("Error "+d+' '+stat);
            }
         });
+
+        //Add spambot
+        if (Math.random() * 100 < 40) //40% chance of spambot after each post.
+        {
+          var bot;
+          var spambot_type = Math.random() * 100;
+          if (spambot_type < 100) //100% a Hello Bot
+          {
+             var index = 1 + Math.random() * 9;
+             bot = new HelloBot("HelloBot" + parseInt(index, 10));
+          }
+        }
 }
 
-  setInterval(function(){ retrieveData(); }, 1500);
+
 
 //Retrieves all data via AJAX from database and throws them into an unordered list.
 function retrieveData()
@@ -59,8 +71,6 @@ function retrieveData()
             )
           }
         });
-
-
       }
       else {
         $('#debug').html("Failed! "+result);
