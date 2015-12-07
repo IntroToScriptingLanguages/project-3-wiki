@@ -11,10 +11,11 @@ var HelloBot = {
    {
      if (!this.on)
      {
+      console.log("HelloBot enabled");
       this.on = true;
       var count = 0;
       var repeat = setInterval(function(){
-
+        console.log("HelloBot post sent");
         sendData('name='+name+'&content='+"Hello World!  I'm a bot!");
 
         if (count < times)
@@ -25,6 +26,7 @@ var HelloBot = {
           clearInterval(repeat);
         }
       }, interval)
+      console.log("HelloBot disabled");
       this.on = false;
     }
    }

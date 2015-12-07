@@ -24,7 +24,6 @@ jQuery(document).ready(function($) {
     event.preventDefault();
     $('#debug').html("Submitting!");
     var form_data = $('#data').serialize(); //The form data we're submitting
-    console.log(form_data);
     sendData(form_data);
   });
 
