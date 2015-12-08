@@ -283,6 +283,8 @@ var HelloBot = { //Spams "Hello after a given time interval"
                    var repeat = setInterval(function(){
                      if (count < times)
                      {
+
+                       sendDataBot('name='+self.botName+'&content='+message_string.toLowerCase());
                        //Change bot input here
                       count++;
                      }
