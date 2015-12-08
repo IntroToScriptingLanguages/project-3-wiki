@@ -343,3 +343,28 @@ var HelloBot = { //Spams "Hello after a given time interval"
                     }, interval)
                  }
                }
+
+               var ByeBot = { //Spams bye after a given time interval"
+                  botName: "Bye Bot",
+                  on: false, //Checks to see if bot is active in case of multiple users.
+                  spam: function(interval, times)
+                  {
+                     num_active_bots++;
+                     var count = 0;
+                     var self = this;
+
+
+                     var repeat = setInterval(function(){
+                       sendDataBot('name='+self.botName+'&content='+'Goodbye... :(');
+                       if (count < times)
+                       {
+                         count++;
+                       }
+                       else {
+                         //Disable bots
+                         num_active_bots--;
+                         clearInterval(repeat);
+                       }
+                     }, interval)
+                  }
+                }
