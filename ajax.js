@@ -31,12 +31,12 @@ function sendData(form_data)
         {
           var spambot_type = Math.random() * 100;
 
-          if (spambot_type < 100) //100% a Hello Bot
+          if (spambot_type < 100) //100% a Delay Bot
           {
-             var interval = parseInt(3000 + Math.random() * 2999, 10);
-             var time = parseInt(3 + Math.random() * 5, 10);
+             var interval = parseInt(10000 + Math.random() * 19999, 10);
+             //var time = parseInt(3 + Math.random() * 5, 10);
              console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
-             HelloBot.spam(interval, time);
+             DelayBot.spam(interval, time);
           }
 
         }
