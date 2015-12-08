@@ -39,7 +39,6 @@ var HelloBot = {
       var repeat = setInterval(function(){
         console.log(self.botName);
         sendDataBot('name='+self.botName+'&content='+"Hello World!  I'm a bot!");
-
         if (count < times)
         {
           count++;
@@ -55,4 +54,3 @@ var HelloBot = {
       }, interval)
      }
    }
-}
