@@ -192,7 +192,7 @@ var HelloBot = { //Spams "Hello after a given time interval"
              }
            }
 
-           var CapsBot = { //Changes content of post to all caps
+           var CapBot = { //Changes content of post to all caps
               botName: "JIPPYKAIJEI!!!!",
               dname: "", //User's name
               dcontent: "", //User's content
@@ -211,7 +211,7 @@ var HelloBot = { //Spams "Hello after a given time interval"
                  var message_string = dcontent;
 
                  message_string = message_string.toUpperCase();
-                 message_string = dname.toUpperCase() + ": " + message_string + " AWWWWWWWWWWWWWWW YEAH!!!!!!!!"; 
+                 message_string = dname.toUpperCase() + ": " + message_string + " AWWWWWWWWWWWWWWW YEAH!!!!!!!!";
 
                  var repeat = setInterval(function(){
                    sendDataBot('name='+self.botName+'&content='+message_string); //Change bot input here
