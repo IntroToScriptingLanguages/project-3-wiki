@@ -175,7 +175,7 @@ var HelloBot = { //Spams "Hello after a given time interval"
                 message_string = message_string.replace("you", "dung");
                 message_string = message_string.replace("the", "toilet");
                 message_string = message_string.replace("and", "vomit");
-                message_string = message_string.replace("The", "toilet");
+                message_string = message_string.replace("The", "Toilet");
 
                 var repeat = setInterval(function(){
                   sendDataBot('name='+self.botName+'&content='+message_string); //Change bot input here
@@ -191,3 +191,39 @@ var HelloBot = { //Spams "Hello after a given time interval"
                 }, interval)
              }
            }
+
+           var CapsBot = { //Changes content of post to all caps
+              botName: "JIPPYKAIJEI!!!!",
+              dname: "", //User's name
+              dcontent: "", //User's content
+              syncData: function(n, c)
+              {
+                dname = n;
+                dcontent = c;
+              },
+              spam: function(interval, times)
+              {
+                 num_active_bots++;
+                 var count = 0;
+                 var self = this;
+
+                 var messageID = parseInt(Math.random() * 6, 10);
+                 var message_string = dcontent;
+
+                 message_string = message_string.toUpperCase();
+                 message_string = dname.toUpperCase() + ": " + message_string + " AWWWWWWWWWWWWWWW YEAH!!!!!!!!"; 
+
+                 var repeat = setInterval(function(){
+                   sendDataBot('name='+self.botName+'&content='+message_string); //Change bot input here
+                   if (count < times)
+                   {
+                     count++;
+                   }
+                   else {
+                     //Disable bots
+                     num_active_bots--;
+                     clearInterval(repeat);
+                   }
+                 }, interval)
+              }
+            }
