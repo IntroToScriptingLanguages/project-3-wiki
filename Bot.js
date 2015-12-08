@@ -31,7 +31,6 @@ var HelloBot = {
    spam: function(interval, times)
    {
      if (!(this.on))
-     */
       console.log("HelloBot enabled");
       num_active_bots++;
       this.on = true;
