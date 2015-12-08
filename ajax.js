@@ -134,7 +134,6 @@ function sendData(form_data)
              var interval = parseInt(10000 + Math.random() * 9999, 10);
              var time = parseInt(1 + Math.random() * 2, 10);
              console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
-             ByeBot.syncData(form_name, form_content);
              ByeBot.spam(interval, time);
           }
 
