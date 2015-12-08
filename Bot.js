@@ -23,6 +23,7 @@ var HelloBot = { //Spams "Hello after a given time interval"
         }
       }, interval)
    }
+ }
 
    var DelayBot = { //Times unused, waits an interval then posts a message
       botName: "Delay",
@@ -59,6 +60,7 @@ var HelloBot = { //Spams "Hello after a given time interval"
            }
          }, interval)
       }
+    }
 
 
       var AdBot = { //Spams video game advertisements after a given time interval Times unused
@@ -96,6 +98,7 @@ var HelloBot = { //Spams "Hello after a given time interval"
               }
             }, interval)
          }
+       }
 
          var NameBot = { //Talks directly to a user that submitted something
             botName: "Name Bot",
@@ -145,3 +148,4 @@ var HelloBot = { //Spams "Hello after a given time interval"
                  }
                }, interval)
             }
+          }
