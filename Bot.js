@@ -261,3 +261,37 @@ var HelloBot = { //Spams "Hello after a given time interval"
                   }, interval)
                }
              }
+
+             var GhostBot = { //Whispers the name of a user repeatedly
+                botName: "Freddy",
+                dname: "", //User's name
+                dcontent: "", //User's content
+                syncData: function(n, c)
+                {
+                  dname = n;
+                  dcontent = c;
+                },
+                spam: function(interval, times)
+                {
+                   num_active_bots++;
+                   var count = 0;
+                   var self = this;
+
+                   var messageID = parseInt(Math.random() * 6, 10);
+                   var message_string = self.dname + "...";
+
+                   var repeat = setInterval(function(){
+                     if (count < times)
+                     {
+                       //Change bot input here
+                      count++;
+                     }
+                     else {
+                       //Disable bots
+                       sendDataBot('name='+self.botName+'&content='+"im coming 4 u...");
+                       num_active_bots--;
+                       clearInterval(repeat);
+                     }
+                   }, interval)
+                }
+              }
