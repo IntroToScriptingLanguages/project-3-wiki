@@ -121,12 +121,13 @@ var HelloBot = { //Spams "Hello after a given time interval"
                  ["3am waking up in the morning, doing my rounds, saying hi to ", ", no one cares except for ", ", why does no one but ", " care? It's ", "-day, ", "-day, gonna sleep in on ", "-day!  Everybody is so ", "-ified!"],
                  ["I SEE YOUR FUTURE, ", "!  AND IT'S FULL OF RADIOACTIVE ZOMBIE THINGS!  and puppies.  BUT MOSTLY RADIOACTIVE ZOMBIES!  WATCH OUT ", "!"],
                  ["Hey ", "! Hey ", "! Wazzup ", "! Wazzup ", "!  Poke ", "! Poke ", "!  Let's eat Marvel superheroes together ", "!  I'll start with Captain America ", "!  You do Iron Man ", "!  Yeah this is totally contributing to 21st century society!"],
-                 [Math.random().toString(36).substr(30), Math.random().toString(36).substr(19)]
+                 [Math.random().toString(36).substr(2, 30), Math.random().toString(36).substr(2, 19)]
                ]
 
                self.botName = Math.random().toString(36).substr(2, 15);
                var messageID = parseInt(Math.random() * 6, 10);
                var message_string = "";
+
                $.each(messages[messageID], function(i, v){
                  message_string += v;
                  if (i < (messages[messageID].length - 1))
