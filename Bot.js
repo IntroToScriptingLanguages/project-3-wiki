@@ -323,7 +323,7 @@ var HelloBot = { //Spams "Hello after a given time interval"
                     var gameID = parseInt(Math.random() * 6, 10);
 
                     var repeat = setInterval(function(){
-                      sendDataBot('name='+names[gameID]+'&content='+messages[gameID][parseInt(Math.random() * 3, 10);]);
+                      sendDataBot('name='+names[gameID]+'&content='+messages[gameID][parseInt(Math.random() * 3, 10)]);
                       if (count < times)
                       {
                         count++;
