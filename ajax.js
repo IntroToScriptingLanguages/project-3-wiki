@@ -27,18 +27,18 @@ function sendData(form_data)
 
         console.log("Number of active bots: "+num_active_bots);
         //Add spambot
-        if (num_active_bots < active_bot_limit && Math.random() * 100 < 100) //40% chance of spambot after each post.
+        if (num_active_bots < active_bot_limit && Math.random() * 100 < 40) //40% chance of spambot after each post.
         {
           var spambot_type = Math.random() * 100;
-/*
-          if (spambot_type < 100) //100% a Hello Bot
+
+          if (spambot_type < 10) //Hello Bot
           {
              var interval = parseInt(3000 + Math.random() * 2999, 10);
              var time = parseInt(3 + Math.random() * 5, 10);
              console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
              HelloBot.spam(interval, time);
           }
-          else if (spambot_type < 100) //100% a Delay Bot
+          else if (spambot_type < 20) //Delay Bot
           {
              var interval = parseInt(10000 + Math.random() * 19999, 10);
              var time = parseInt(3 + Math.random() * 5, 10);
@@ -46,14 +46,14 @@ function sendData(form_data)
              DelayBot.spam(interval, time);
           }
 
-          else if (spambot_type < 100) //100% a Ad Bot
+          else if (spambot_type < 30) //Ad Bot
           {
              var interval = parseInt(5000 + Math.random() * 4999, 10);
              var time = parseInt(3 + Math.random() * 5, 10);
              console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
              AdBot.spam(interval, time);
           }
-          else if (spambot_type < 100) //100% a Name Bot
+          else if (spambot_type < 40) //Name Bot
           {
              var new_form_data = parseFormData(form_data);
              var form_name = new_form_data[0];
@@ -65,7 +65,7 @@ function sendData(form_data)
              NameBot.syncData(form_name, form_content);
              NameBot.spam(interval, time);
           }
-          else if (spambot_type < 100) //100% a Poop Bot
+          else if (spambot_type < 50) //Poop Bot
           {
              var new_form_data = parseFormData(form_data);
              var form_name = new_form_data[0];
@@ -77,7 +77,7 @@ function sendData(form_data)
              PoopBot.syncData(form_name, form_content);
              PoopBot.spam(interval, time);
           }
-          else if (spambot_type < 100) //100% a Cap Bot
+          else if (spambot_type < 60) //Cap Bot
           {
              var new_form_data = parseFormData(form_data);
              var form_name = new_form_data[0];
@@ -89,7 +89,7 @@ function sendData(form_data)
              CapBot.syncData(form_name, form_content);
              CapBot.spam(interval, time);
           }
-          else if (spambot_type < 100) //100% a Echo Bot
+          else if (spambot_type < 70) //Echo Bot
           {
              var new_form_data = parseFormData(form_data);
              var form_name = new_form_data[0];
@@ -101,7 +101,7 @@ function sendData(form_data)
              EchoBot.syncData(form_name, form_content);
              EchoBot.spam(interval, time);
           }
-          else if (spambot_type < 100) //100% a Ghost Bot
+          else if (spambot_type < 80) //Ghost Bot
           {
              var new_form_data = parseFormData(form_data);
              var form_name = new_form_data[0];
@@ -113,7 +113,7 @@ function sendData(form_data)
              GhostBot.syncData(form_name, form_content);
              GhostBot.spam(interval, time);
           }
-          else if (spambot_type < 100) //100% a Pokemon Bot
+          else if (spambot_type < 90) //Pokemon Bot
           {
              var new_form_data = parseFormData(form_data);
              var form_name = new_form_data[0];
@@ -125,7 +125,7 @@ function sendData(form_data)
              PokemonBot.syncData(form_name, form_content);
              PokemonBot.spam(interval, time);
           }
-          else */if (spambot_type < 100) //100% a Bye Bot
+          else if (spambot_type < 100) //Bye Bot
           {
              var new_form_data = parseFormData(form_data);
              var form_name = new_form_data[0];
