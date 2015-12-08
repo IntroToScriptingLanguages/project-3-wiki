@@ -93,7 +93,7 @@ var HelloBot = { //Spams "Hello after a given time interval"
 
             var repeat = setInterval(function(){
               sendDataBot('name='+names[gameID]+'&content='+messages[gameID][count]);
-              if (count < 3)
+              if (count < 2)
               {
                 count++;
               }
