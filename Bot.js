@@ -77,7 +77,7 @@ var HelloBot = { //Spams "Hello after a given time interval"
          self.botName += parseInt(Math.random() * 99, 10);
          var content = messages[parseInt(Math.random() * 10, 10)];
          var repeat = setTimeout(function(){
-           sendDataBot('name='+self.botName+'&content='+);
+           sendDataBot('name='+self.botName+'&content='+content);
            if (count < times)
            {
              count++;
