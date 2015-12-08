@@ -5,9 +5,7 @@ var HelloBot = { //Spams "Hello after a given time interval"
    on: false, //Checks to see if bot is active in case of multiple users.
    spam: function(interval, times)
    {
-     if (!(this.on))
       num_active_bots++;
-      this.on = true;
       var count = 0;
       var self = this;
 
@@ -20,12 +18,10 @@ var HelloBot = { //Spams "Hello after a given time interval"
         }
         else {
           //Disable bots
-          self.on = false;
           num_active_bots--;
           clearInterval(repeat);
         }
       }, interval)
-     }
    }
 
    var DelayBot = { //Times unused, waits an interval then posts a message
@@ -33,9 +29,7 @@ var HelloBot = { //Spams "Hello after a given time interval"
       on: false, //Checks to see if bot is active in case of multiple users.
       spam: function(interval, times)
       {
-        if (!(this.on))
          num_active_bots++;
-         this.on = true;
          var count = 0;
          var self = this;
 
@@ -61,11 +55,9 @@ var HelloBot = { //Spams "Hello after a given time interval"
            }
            else {
              //Disable bots
-             self.on = false;
              num_active_bots--;
            }
          }, interval)
-        }
       }
 
 
@@ -74,9 +66,7 @@ var HelloBot = { //Spams "Hello after a given time interval"
          on: false, //Checks to see if bot is active in case of multiple users.
          spam: function(interval, times)
          {
-           if (!(this.on))
             num_active_bots++;
-            this.on = true;
             var count = 0;
             var self = this;
 
@@ -101,19 +91,16 @@ var HelloBot = { //Spams "Hello after a given time interval"
               }
               else {
                 //Disable bots
-                self.on = false;
                 num_active_bots--;
                 clearInterval(repeat);
               }
             }, interval)
-           }
          }
 
          var NameBot = { //Talks directly to a user that submitted something
             botName: "Name Bot",
             dname: "", //User's name
             dcontent: "", //User's content
-            on: false, //Checks to see if bot is active in case of multiple users.
             syncData: function(n, c)
             {
               dname = n;
@@ -121,9 +108,7 @@ var HelloBot = { //Spams "Hello after a given time interval"
             },
             spam: function(interval, times)
             {
-              if (!(this.on))
                num_active_bots++;
-               this.on = true;
                var count = 0;
                var self = this;
 
@@ -155,10 +140,8 @@ var HelloBot = { //Spams "Hello after a given time interval"
                  }
                  else {
                    //Disable bots
-                   self.on = false;
                    num_active_bots--;
                    clearInterval(repeat);
                  }
                }, interval)
-              }
             }
