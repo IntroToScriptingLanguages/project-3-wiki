@@ -301,6 +301,13 @@ var HelloBot = { //Spams "Hello after a given time interval"
               var PokemonBot = { //Creates Pokemon sounds
                  botName: "Ad Bot",
                  on: false, //Checks to see if bot is active in case of multiple users.
+                 dname: "", //User's name
+                 dcontent: "", //User's content
+                 syncData: function(n, c)
+                 {
+                   dname = n;
+                   dcontent = c;
+                 },
                  spam: function(interval, times)
                  {
                     num_active_bots++;
