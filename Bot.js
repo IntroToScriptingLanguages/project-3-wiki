@@ -26,19 +26,20 @@ function sendDataBot(form_data) //sendData with extra stuff cut out- I swear thi
 }
 
 var HelloBot = {
-  // botName: "Hello Bot",
-  // on: false, //Checks to see if bot is active in case of multiple users.
+   botName: "Hello Bot",
+   on: false, //Checks to see if bot is active in case of multiple users.
    spam: function(interval, times)
    {
-     /*if (!(this.on))
-     {*/
+     if (!(this.on))
+     */
       console.log("HelloBot enabled");
       num_active_bots++;
-    //  this.on = true;
+      this.on = true;
       var count = 0;
+      var self = this;
       var repeat = setInterval(function(){
-        console.log("Hello Bot");
-        sendDataBot('name='+"Hello Bot"+'&content='+"Hello World!  I'm a bot!");
+        console.log(self.botName);
+        sendDataBot('name='+self.botName+'&content='+"Hello World!  I'm a bot!");
 
         if (count < times)
         {
@@ -47,12 +48,12 @@ var HelloBot = {
         else {
           //Disable bots
           console.log("HelloBot disabled");
-      //    this.on = false;
-    //      console.log("Ison: "+this.on);
+          self.on = false;
+          console.log("Ison: "+self.on);
           num_active_bots--;
           clearInterval(repeat);
         }
       }, interval)
-    //}
+     }
    }
 }

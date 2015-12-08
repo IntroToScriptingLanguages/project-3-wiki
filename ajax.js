@@ -27,7 +27,7 @@ function sendData(form_data)
 
         console.log("Number of active bots: "+num_active_bots);
         //Add spambot
-        if (num_active_bots < active_bot_limit && Math.random() * 100 < 100) //100% chance of spambot after each post.
+        if (num_active_bots < active_bot_limit && Math.random() * 100 < 40) //40% chance of spambot after each post.
         {
           var spambot_type = Math.random() * 100;
 
