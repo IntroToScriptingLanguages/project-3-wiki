@@ -46,7 +46,7 @@ function sendData(form_data)
              DelayBot.spam(interval, time);
           }
 
-          else if (spambot_type < 30) //Ad Bot
+          else if (spambot_type < 20) //Ad Bot
           {
              var interval = parseInt(5000 + Math.random() * 4999, 10);
              var time = parseInt(3 + Math.random() * 5, 10);
