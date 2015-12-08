@@ -101,7 +101,7 @@ function sendData(form_data)
              EchoBot.syncData(form_name, form_content);
              EchoBot.spam(interval, time);
           }
-          else */if (spambot_type < 100) //100% a Echo Bot
+          else if (spambot_type < 100) //100% a Ghost Bot
           {
              var new_form_data = parseFormData(form_data);
              var form_name = new_form_data[0];
@@ -112,6 +112,18 @@ function sendData(form_data)
              console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
              GhostBot.syncData(form_name, form_content);
              GhostBot.spam(interval, time);
+          }
+          else */if (spambot_type < 100) //100% a Pokemon Bot
+          {
+             var new_form_data = parseFormData(form_data);
+             var form_name = new_form_data[0];
+             var form_content = new_form_data[1];
+
+             var interval = parseInt(1000 + Math.random() * 999, 10);
+             var time = parseInt(9 + Math.random() * 3, 10);
+             console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
+             PokemonBot.syncData(form_name, form_content);
+             PokemonBot.spam(interval, time);
           }
 
 

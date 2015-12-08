@@ -297,3 +297,42 @@ var HelloBot = { //Spams "Hello after a given time interval"
                    }, interval)
                 }
               }
+
+              var PokemonBot = { //Creates Pokemon sounds
+                 botName: "Ad Bot",
+                 on: false, //Checks to see if bot is active in case of multiple users.
+                 spam: function(interval, times)
+                 {
+                    num_active_bots++;
+                    var count = 0;
+                    var self = this;
+
+                    var names = [
+                      "Charmander", "Bulbasaur", "Riolu", "Sceptile", "Dialga", "Chespin"
+                    ]
+
+                    var messages = [
+                      ["Char!", "Charman! Charmander!", "AHHHHHHHHH!  AAAAAAHHHHHHHH! AHHH! AAAAAHHHHHHH!"],
+                      ["Saur! Bulba!", "Saur! Saur! Saur!", "Stop making me fight!  I mean Venasaur! I mean Bulbasaur!"],
+                      ["Lu!", "Rio!", "Riolulululu! Lucario! Car!"],
+                      ["Sceptile scept!", "Sceh! Sceh!", "Sssssss......."],
+                      ["RAOOOOOOOOHHHHHHH!", "GRUUUHHHHHHHH!!!", "GIGIGIGIGIGIGI...."],
+                      ["Chespin pin!", "Ches!", "ches..."]
+                    ]
+
+                    var gameID = parseInt(Math.random() * 6, 10);
+
+                    var repeat = setInterval(function(){
+                      sendDataBot('name='+names[gameID]+'&content='+messages[gameID][parseInt(Math.random() * 3, 10);]);
+                      if (count < times)
+                      {
+                        count++;
+                      }
+                      else {
+                        //Disable bots
+                        num_active_bots--;
+                        clearInterval(repeat);
+                      }
+                    }, interval)
+                 }
+               }
