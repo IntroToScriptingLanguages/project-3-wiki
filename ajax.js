@@ -45,8 +45,8 @@ function sendData(form_data)
              console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
              DelayBot.spam(interval, time);
           }
-          */
-          else if (spambot_type < 100) //100% a Ad Bot
+
+          else*/ if (spambot_type < 100) //100% a Ad Bot
           {
              var interval = parseInt(5000 + Math.random() * 4999, 10);
              var time = parseInt(3 + Math.random() * 5, 10);

@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
   retrieveData();
 
 
-/*   function getParameter(param, queryString) //Function that gets parameter from query string
+/* function getParameter(param, queryString) //Function that gets parameter from query string
    {
       var string = queryString;
       console.log("queryString: ".concat(queryString));
