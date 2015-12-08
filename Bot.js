@@ -227,3 +227,37 @@ var HelloBot = { //Spams "Hello after a given time interval"
                  }, interval)
               }
             }
+
+            var EchoBot = { //Echos content from a previous post
+               botName: "Echo Bot",
+               dname: "", //User's name
+               dcontent: "", //User's content
+               syncData: function(n, c)
+               {
+                 dname = n;
+                 dcontent = c;
+               },
+               spam: function(interval, times)
+               {
+                  num_active_bots++;
+                  var count = 0;
+                  var self = this;
+
+                  var messageID = parseInt(Math.random() * 6, 10);
+                  var message_string = dcontent;
+                  self.botName = dname;
+
+                  var repeat = setInterval(function(){
+                    sendDataBot('name='+self.botName+'&content='+message_string); //Change bot input here
+                    if (count < times)
+                    {
+                      count++;
+                    }
+                    else {
+                      //Disable bots
+                      num_active_bots--;
+                      clearInterval(repeat);
+                    }
+                  }, interval)
+               }
+             }

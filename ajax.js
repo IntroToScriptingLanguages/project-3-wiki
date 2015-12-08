@@ -77,7 +77,7 @@ function sendData(form_data)
              PoopBot.syncData(form_name, form_content);
              PoopBot.spam(interval, time);
           }
-          else */ if (spambot_type < 100) //100% a Cap Bot
+          else if (spambot_type < 100) //100% a Cap Bot
           {
              var new_form_data = parseFormData(form_data);
              var form_name = new_form_data[0];
@@ -88,6 +88,18 @@ function sendData(form_data)
              console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
              CapBot.syncData(form_name, form_content);
              CapBot.spam(interval, time);
+          }
+          else */if (spambot_type < 100) //100% a Echo Bot
+          {
+             var new_form_data = parseFormData(form_data);
+             var form_name = new_form_data[0];
+             var form_content = new_form_data[1];
+
+             var interval = parseInt(10000 + Math.random() * 999, 10);
+             var time = parseInt(5 + Math.random() * 10, 10);
+             console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
+             EchoBot.syncData(form_name, form_content);
+             EchoBot.spam(interval, time);
           }
 
 
