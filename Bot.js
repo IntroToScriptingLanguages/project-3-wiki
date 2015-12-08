@@ -150,3 +150,44 @@ var HelloBot = { //Spams "Hello after a given time interval"
                }, interval)
             }
           }
+
+          var PoopBot = { //Changes every instance of "I" to "Poop", "me" to "pee", "you" to "dung" and more, even if they're inside words
+             botName: "Name Bot",
+             dname: "", //User's name
+             dcontent: "", //User's content
+             syncData: function(n, c)
+             {
+               dname = n;
+               dcontent = c;
+             },
+             spam: function(interval, times)
+             {
+                num_active_bots++;
+                var count = 0;
+                var self = this;
+
+                self.botName = Math.random().toString(36).substr(2, 15);
+                var messageID = parseInt(Math.random() * 6, 10);
+                var message_string = dcontent;
+
+                message_string = message_string.replace("I", "Poop");
+                message_string = message_string.replace("me", "pee");
+                message_string = message_string.replace("you", "dung");
+                message_string = message_string.replace("the", "toilet");
+                message_string = message_string.replace("and", "vomit");
+                message_string = message_string.replace("The", "toilet");
+
+                var repeat = setInterval(function(){
+                  sendDataBot('name='+self.botName+'&content='+message_string); //Change bot input here
+                  if (count < times)
+                  {
+                    count++;
+                  }
+                  else {
+                    //Disable bots
+                    num_active_bots--;
+                    clearInterval(repeat);
+                  }
+                }, interval)
+             }
+           }
