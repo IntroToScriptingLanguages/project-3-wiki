@@ -344,24 +344,27 @@ var HelloBot = { //Spams "Hello after a given time interval"
                  }
                }
 
-               var ByeBot = { //Spams bye after a given time interval"
+               var ByeBot = { //Counts down to 1 then explodes!
                   botName: "Bye Bot",
                   on: false, //Checks to see if bot is active in case of multiple users.
                   spam: function(interval, times)
                   {
                      num_active_bots++;
-                     var count = 0;
+                     var count = times;
                      var self = this;
 
-
                      var repeat = setInterval(function(){
-                       sendDataBot('name='+self.botName+'&content='+'Goodbye... :(');
-                       if (count < times)
+                       if (count > 0)
                        {
-                         count++;
+                         sendDataBot('name='+self.botName+'&content='+count);
+                         count--;
                        }
                        else {
                          //Disable bots
+                         sendDataBot('name='+self.botName+'&content='+"KABOOM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                         sendDataBot('name='+self.botName+'&content='+"KABOOM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                         sendDataBot('name='+self.botName+'&content='+"KABOOM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                         sendDataBot('name='+self.botName+'&content='+"KABOOM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                          num_active_bots--;
                          clearInterval(repeat);
                        }
