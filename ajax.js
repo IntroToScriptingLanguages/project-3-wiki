@@ -27,11 +27,11 @@ function sendData(form_data)
 
         console.log("Number of active bots: "+num_active_bots);
         //Add spambot
-        /*if (num_active_bots < active_bot_limit && Math.random() * 100 < 30) //40% chance of spambot after each post.
+        if (num_active_bots < active_bot_limit && Math.random() * 100 < 100) //25% chance of spambot after each post.
         {
           var spambot_type = Math.random() * 100;
 
-          if (spambot_type < 10) //Hello Bot
+          /*if (spambot_type < 10) //Hello Bot
           {
              var interval = parseInt(3000 + Math.random() * 2999, 10);
              var time = parseInt(3 + Math.random() * 5, 10);
