@@ -33,14 +33,14 @@ function sendData(form_data)
 
           if (spambot_type < 10) //Hello Bot
           {
-             var interval = parseInt(3000 + Math.random() * 2999, 10);
+             var interval = parseInt(6000 + Math.random() * 2999, 10);
              var time = parseInt(3 + Math.random() * 5, 10);
              console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
              HelloBot.spam(interval, time);
           }
           else if (spambot_type < 20) //Delay Bot
           {
-             var interval = parseInt(10000 + Math.random() * 19999, 10);
+             var interval = parseInt(20000 + Math.random() * 19999, 10);
              var time = parseInt(3 + Math.random() * 5, 10);
              console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
              DelayBot.spam(interval, time);
@@ -48,7 +48,7 @@ function sendData(form_data)
 
           else if (spambot_type < 20) //Ad Bot
           {
-             var interval = parseInt(5000 + Math.random() * 4999, 10);
+             var interval = parseInt(10000 + Math.random() * 4999, 10);
              var time = parseInt(3 + Math.random() * 5, 10);
              console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
              AdBot.spam(interval, time);
@@ -59,7 +59,7 @@ function sendData(form_data)
              var form_name = new_form_data[0];
              var form_content = new_form_data[1];
 
-             var interval = parseInt(1500 + Math.random() * 1499, 10);
+             var interval = parseInt(5000 + Math.random() * 1499, 10);
              var time = parseInt(5 + Math.random() * 10, 10);
              console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
              NameBot.syncData(form_name, form_content);
@@ -71,7 +71,7 @@ function sendData(form_data)
              var form_name = new_form_data[0];
              var form_content = new_form_data[1];
 
-             var interval = parseInt(7500 + Math.random() * 4999, 10);
+             var interval = parseInt(15000 + Math.random() * 4999, 10);
              var time = parseInt(1 + Math.random() * 4, 10);
              console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
              PoopBot.syncData(form_name, form_content);
@@ -83,7 +83,7 @@ function sendData(form_data)
              var form_name = new_form_data[0];
              var form_content = new_form_data[1];
 
-             var interval = parseInt(2500 + Math.random() * 4999, 10);
+             var interval = parseInt(7000 + Math.random() * 4999, 10);
              var time = parseInt(3 + Math.random() * 3, 10);
              console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
              CapBot.syncData(form_name, form_content);
@@ -107,7 +107,7 @@ function sendData(form_data)
              var form_name = new_form_data[0];
              var form_content = new_form_data[1];
 
-             var interval = parseInt(1000 + Math.random() * 999, 10);
+             var interval = parseInt(15000 + Math.random() * 999, 10);
              var time = parseInt(3 + Math.random() * 3, 10);
              console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
              GhostBot.syncData(form_name, form_content);
@@ -119,7 +119,7 @@ function sendData(form_data)
              var form_name = new_form_data[0];
              var form_content = new_form_data[1];
 
-             var interval = parseInt(1000 + Math.random() * 999, 10);
+             var interval = parseInt(6000 + Math.random() * 999, 10);
              var time = parseInt(9 + Math.random() * 3, 10);
              console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
              PokemonBot.syncData(form_name, form_content);
@@ -131,7 +131,7 @@ function sendData(form_data)
              var form_name = new_form_data[0];
              var form_content = new_form_data[1];
 
-             var interval = parseInt(5000 + Math.random() * 2999, 10);
+             var interval = parseInt(6000 + Math.random() * 2999, 10);
              var time = parseInt(3 + Math.random() * 2, 10);
              console.log(interval+", "+time);  //Worried that Bot.js comes after ajax.js, Bot calls "sendData"
              ByeBot.spam(interval, time);
